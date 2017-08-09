@@ -3,25 +3,39 @@
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script>
-      <!-- put your JavaScript code here for now -->
+      var plays = ['rock','paper','scissors'];
+
+      function shoot() {
+        console.log('hey');
+        var computerHand = document.createElement("div");
+        var play = plays[Math.floor(Math.random()*plays.length)];
+        computerHand.setAttribute('data-shot', play);
+        var comp = document.getElementById("computer");
+        comp.appendChild(computerHand);
+        comp.innerText(play);
+      }
+
+      function playGame() {
+        console.log('first');
+        shoot();
+      };
     </script>
   </head>
   <body>
     <h1>Learn to Code JavaScript</h1>
     <h4>If you see a white button below, you're in good shape!</h4>
     <div class="wrapper">
-      <!-- put your JavaScript button here! -->
-    </div>
-    <div>
-    <h3>Brought to you by your friends at <a href="http://galvanize.com">Galvanize</a>.</h3>
-    </div>
-    <div>
-      <img src="http://stream1.gifsoup.com/view3/1074008/rock-paper-scissors-o.gif" />
-    </div> 
-    <div>
-      <img src="https://media.giphy.com/media/E7ClVqqCl8bVS/giphy.gif" />
-    </div>
+      <div id="computer">
 
+      </div>
+
+      <div id="player">
+
+      </div>
+      <button onClick="playGame()" class="rock">Rock</button>
+      <button class="paper">Paper</button>
+      <button class="scissors">Scissors</button>
+    </div>
   </body>
 
 </html>
